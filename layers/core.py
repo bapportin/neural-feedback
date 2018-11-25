@@ -17,8 +17,8 @@ class FullyConnectedLayer(Layer):
         self.activation=activation
         self.insize=insize
         self.outsize=outsize
-        #self.W=np.random.randn(insize, outsize) * (1 / np.sqrt(insize))
-        self.W=np.zeros((insize, outsize))# * (1 / np.sqrt(insize))
+        self.W=np.random.randn(insize, outsize) * (0.1 / insize)
+        #self.W=np.zeros((insize, outsize))# * (1 / np.sqrt(insize))
         self.b=np.zeros(self.outsize)
         self.convert=convert
 

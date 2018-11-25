@@ -14,12 +14,18 @@ def dupResample(err,out):
         else:
             #same shape, do noting
             e=err
-        return e    
+        return e
+
 
 def linearResample(err,out):
+    #print ("lr",err,out)
     return np.interp(np.linspace(0,len(err),len(out)),np.linspace(0,len(err),len(err)),err)
 
 def linearResampleScale(err,out):
     ret=linearResample(err,out)
     f=float(len(err))/len(out)
+    return ret*f
+
+def linearResampleNoise(err,out):
+    ret=linearResample(err,out)
     return ret*f
