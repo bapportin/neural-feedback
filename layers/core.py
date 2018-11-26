@@ -46,7 +46,6 @@ class LocallyConnectedLayer(Layer):
         self.convert=convert
 
     def forward(self,X,level=0,ctx=_dummyCtx):
-        
         ret=self.activation.forward(np.dot(X, self.W)+self.b)
         ctx.put(self,level,X,ret)
         return ret

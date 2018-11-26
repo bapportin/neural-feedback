@@ -21,6 +21,8 @@ def eps_greedy_q_learning_with_table(env, num_episodes=1000):
             new_s, r, done, _ = env.step(a)
             q_table[s, a] = q_table[s, a]*(1-lr) + lr*(r + (y * np.max(q_table[new_s, :])))
             s = new_s
+        #print "done:",done
+        print q_table
     return q_table
 
 
